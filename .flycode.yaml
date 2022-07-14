@@ -1,0 +1,15 @@
+version: "0.1"
+
+environments:
+  - name: edge
+    branch: edge
+    mode: pull-request
+    
+apps:
+  - name: opentrons
+    path: app/
+    text-resources:
+      - path: src/assets/localization/*/app_settings.json
+        format: nested-key-value
+      - path: src/assets/localization/*/heater_shaker.json
+        format: nested-key-value
